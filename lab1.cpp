@@ -14,34 +14,32 @@ int main() {
   double lenght1;
   double speed2;
   double lenght2;
-  // a
   double acceleration1;
-  // b
   double acceleration2;
   double beta;
   double time;
+
+  cout << "acceleration1 = ";
+  cin >> acceleration1;
+  cout << "acceleration2 = ";
+  cin >> acceleration2;  
+  cout << "time = ";
+  cin >> time; 
     
-  acceleration1 = 6.15;
-  acceleration2 = pow(10, -4);
-  time = 18.5;
-    
-    
-  //вычисляем бету
   beta = sqrt(acceleration1 * acceleration2);
-  //вычисляем приближенную скорость
-  speed1 = acceleration1 * time * (1 - ((beta *  time * beta * time) / 3));
-  //вычисляем приближенную длину пробега самолета 
-  lenght1 = (acceleration1 * time * time / 2) * (1 - ((beta * time) * (beta * time) / 6));
+
+  speed1 = acceleration1 * time * (1.0 - ((beta *  time * beta * time) / 3.0));
+
+  lenght1 = (acceleration1 * time * time / 2.0) * (1.0 - ((beta * time) * (beta * time) / 6.0));
     
-  //более точное значение скорости
   speed2 = sqrt(acceleration1 / acceleration2) * atan(beta * time);
-  //более точное значение длины пробега самолета 
-  lenght2 = 1 / acceleration2 * (beta * time * atan(beta * time) - log(1 + beta * beta * time * time) / 2);
+
+  lenght2 = 1.0 / acceleration2 * (beta * time * atan(beta * time) - log(1.0 + beta * beta * time * time) / 2.0);
     
   cout << " speed1 " << speed1
-  << " \tspeed2 "<< speed2
-  << "\tlenght1 "<<lenght1
-  << "\tlenght2 "<<lenght2;
+       << " \tspeed2 "<< speed2
+       << "\tlenght1 "<<lenght1
+       << "\tlenght2 "<<lenght2;
     
     
 return 0;
